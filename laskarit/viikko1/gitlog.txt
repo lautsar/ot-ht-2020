@@ -1,0 +1,158 @@
+commit aef644e6d93d9f3754973f966899ac0269263eae
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:53:13 2020 +0200
+
+    muutettu tiedoston nimeä
+
+ tiedostoja/file1  | 0
+ tiedostoja/file2  | 0
+ tiedostoja/file22 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ed8ebbac66aef0e16fe5fbb2f75eaa7dcb559e73
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:46:21 2020 +0200
+
+    Lisätty tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 0bf6ba0b8551d9dd2297c3caea8ce63e89b10db4
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:41:15 2020 +0200
+
+    Muutoksia ekaan ja kolmanteen
+lautanas@melkinpaasi:~/ot_viikko1$ git log --cat
+fatal: unrecognised argument: --cat
+lautanas@melkinpaasi:~/ot_viikko1$ git log --stat
+commit aef644e6d93d9f3754973f966899ac0269263eae
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:53:13 2020 +0200
+
+    muutettu tiedoston nimeä
+
+ tiedostoja/file1  | 0
+ tiedostoja/file2  | 0
+ tiedostoja/file22 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ed8ebbac66aef0e16fe5fbb2f75eaa7dcb559e73
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:46:21 2020 +0200
+
+    Lisätty tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 0bf6ba0b8551d9dd2297c3caea8ce63e89b10db4
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:41:15 2020 +0200
+
+    Muutoksia ekaan ja kolmanteen
+
+lautanas@melkinpaasi:~/ot_viikko1$ git log --stat
+commit aef644e6d93d9f3754973f966899ac0269263eae
+commit aef644e6d93d9f3754973f966899ac0269263eae
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:53:13 2020 +0200
+
+    muutettu tiedoston nimeä
+
+ tiedostoja/file1  | 0
+ tiedostoja/file2  | 0
+ tiedostoja/file22 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ed8ebbac66aef0e16fe5fbb2f75eaa7dcb559e73
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:46:21 2020 +0200
+
+    Lisätty tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 0bf6ba0b8551d9dd2297c3caea8ce63e89b10db4
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:41:15 2020 +0200
+
+    Muutoksia ekaan ja kolmanteen
+
+ eka.txt    | 4 +++-
+ kolmas.txt | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit c9bff00c72d637c3c9a3dc0f8c0107c24f297b5d
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:38:39 2020 +0200
+
+    tiedoston nimi muutettu
+
+ eka.txt      | 1 +
+ tiedosto.txt | 1 -
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+commit df293b19f6389ddcc8b035c8ad83718b6c7941e8
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:37:30 2020 +0200
+
+    Poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 31017bba0885eecd849b96772926c1b9a39221db
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:33:57 2020 +0200
+
+    Lisätty uusi kansio
+
+ stuff/neljas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit eca76ccf31d5289200c8862bc0dd07816bea14c2
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:33:08 2020 +0200
+
+    Muutoksia toiseen ja kolmanteen tiedostoon
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+
+commit d43e009d23ab51651215281488e59427d0cafb0b
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:31:20 2020 +0200
+
+    Kolmas tiedosto luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a0fd1db6f306705b53b0b6b3f002929cf077476b
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:29:42 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 05075b00cdfac643e2e5b03428e60a044dda1383
+Author: Sari Lautanala <sari.lautanala@helsinki.fi>
+Date:   Mon Mar 9 21:27:27 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+
