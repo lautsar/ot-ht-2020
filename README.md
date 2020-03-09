@@ -1,7 +1,8 @@
-#Tässä on tiedoston otsikko
+# Ohjelmistotekniikka, harjoitustyö
 
-## Ja sen aliotsikko
+## Tehtävät
 
-Tekstiä voi olla monenlaista. Vaikka **lihavoitua**.
+### Viikko 1
 
-Tai miksi ei *kursivoitua*
+[gitlog.txt]https://github.com/lautsar/ot-ht-2020/blob/master/laskarit/viikko1/gitlog.txt
+[komentorivi.txt]https://github.com/lautsar/ot-ht-2020/blob/master/laskarit/viikko1/komentorivi.txt
