@@ -1,6 +1,6 @@
 
-import domain.Logic;
-import domain.User;
+import journal.domain.Logic;
+import journal.domain.User;
 import java.util.ArrayList;
 import java.util.Scanner;
 import org.junit.After;
@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import ui.UI;
+import journal.ui.UI;
 
 public class LogicTest {
     Logic logic;

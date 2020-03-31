@@ -1,6 +1,6 @@
-package ui;
+package journal.ui;
 
-import ui.UI;
+import journal.ui.UI;
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.logging.Level;

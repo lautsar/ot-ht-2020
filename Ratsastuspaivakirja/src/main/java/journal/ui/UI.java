@@ -1,8 +1,8 @@
-package ui;
+package journal.ui;
 
-import domain.Database;
-import domain.Logic;
-import domain.User;
+import journal.domain.Database;
+import journal.domain.Logic;
+import journal.domain.User;
 import java.util.ArrayList;
 import java.util.Scanner;
 
