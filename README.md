@@ -1,14 +1,19 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-## Tehtävät
-
-### Viikko 1
-
-[gitlog.txt](https://github.com/lautsar/ot-ht-2020/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/lautsar/ot-ht-2020/blob/master/laskarit/viikko1/komentorivi.txt)
-
 ## Dokumentaatio
-[Vaatimusmäärittely](ot-ht-2020/dokumentointi/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/lautsar/ot-ht-2020/blob/master/dokumentointi/vaatimusmaarittely.md)
 
-[Tuntikirjanpito](ot-ht-2020/dokumentointi/tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/lautsar/ot-ht-2020/blob/master/dokumentointi/tuntikirjanpito.md)
+
+## Komentorivitoiminnot
+Koodin voi suorittaa komennolla
+
+mvn compile exec:java -Dexec.mainClass=journal.ui.Main
+
+Testit voi ajaa komennolla
+
+mvn test
+
+Testikattavuusraportti luodaan komennolla
+
+mvn jacoco:report
