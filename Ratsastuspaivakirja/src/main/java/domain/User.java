@@ -3,26 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ratsastuspaivakirja;
+package domain;
 
 /**
  *
  * @author lautanas
  */
 public class User {
+
     private String user;
+    private Database db;
 
     public User(String user) {
         this.user = user;
     }
-    
-    public String getUser() {
+
+    public User(String user, Database db) {
+        this.user = user;
+        this.db = db;
+    }
+
+    public String getName() {
         return user;
     }
 
     public void setUser(String user) {
         this.user = user;
     }
-    
-    
+
 }

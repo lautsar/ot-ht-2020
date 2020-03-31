@@ -1,5 +1,9 @@
-package ratsastuspaivakirja;
+package ui;
 
+import domain.Database;
+import domain.Logic;
+import domain.User;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UI {
@@ -7,11 +11,18 @@ public class UI {
     private Scanner reader;
     private boolean signedIn;
     private boolean quit;
+    private Database db;
+    private ArrayList<User> users;
+    private User currentUser;
+    private Logic logic;
 
     public UI(Scanner reader) {
         this.reader = reader;
         this.signedIn = false;
         this.quit = false;
+        this.db = db;
+        this.users = new ArrayList<>();
+        this.logic = new Logic(reader);
     }
 
     public void start() {
@@ -54,39 +65,25 @@ public class UI {
         }
     }
 
-    public void signIn() {
-        System.out.print("Enter user name: ");
-        String user = reader.nextLine();
-
-        if (user.equals("Koira")) {
-            System.out.println("Signing in.");
-            this.signedIn = true;
-        } else {
-            System.out.println("User was not found. Try again (1), create new user (2) or quit (3)");
-            userChoices();
-        }
-    }
-
-    public void createUser() {
-        System.out.print("Give user name: ");
-        String user = reader.nextLine();
-
-        if (user.equals("Kissa")) {
-            System.out.println("User name already exists. Sign in (1), create new user (2) or quit (3)");
-            userChoices();
-        } else {
-            System.out.println("New user " + user + " created. Sign in (1), create new user (2) or quit (3)");
-            userChoices();
-        }
-    }
+    
 
     public void userChoices() {
         System.out.print("Enter command (1-3): ");
         String choice = reader.nextLine();
         if (choice.equals("1")) {
-            signIn();
+            System.out.print("Enter user name: ");
+            String user = reader.nextLine();
+            
+            signedIn = logic.signIn(user, users);
         } else if (choice.equals("2")) {
-            createUser();
+            System.out.print("Give user name: ");
+            String name = reader.nextLine();
+            
+            User user = logic.createUser(name, users);
+            
+            if (user != null) {
+                users.add(user);
+            }
         } else if (choice.equals("3")) {
             this.quit = true;
             return;

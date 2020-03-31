@@ -1,6 +1,10 @@
-package ratsastuspaivakirja;
+package ui;
 
+import ui.UI;
+import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
 
