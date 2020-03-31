@@ -48,7 +48,7 @@ public class UI {
     }
 
     public void mainMenuCommands() {
-        System.out.print("Enter command (1-4): ");
+        System.out.println("Enter command (1-4): ");
         String command = reader.nextLine();
 
         if (command.equals("1")) {
@@ -68,15 +68,15 @@ public class UI {
     
 
     public void userChoices() {
-        System.out.print("Enter command (1-3): ");
+        System.out.println("Enter command (1-3): ");
         String choice = reader.nextLine();
         if (choice.equals("1")) {
-            System.out.print("Enter user name: ");
+            System.out.println("Enter user name: ");
             String user = reader.nextLine();
             
             signedIn = logic.signIn(user, users);
         } else if (choice.equals("2")) {
-            System.out.print("Give user name: ");
+            System.out.println("Give user name: ");
             String name = reader.nextLine();
             
             User user = logic.createUser(name, users);
