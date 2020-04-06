@@ -7,6 +7,7 @@ package journal.domain;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import journal.domain.Horse.Gender;
 
 /**
  *
@@ -20,7 +21,7 @@ public class Logic {
     private ArrayList<User> users;
     private User currentUser;
     
-    public Logic(Scanner reader) {
+    public Logic() {
         this.reader = reader;
 
     }
@@ -65,5 +66,56 @@ public class Logic {
             System.out.println("New user " + name + " created.");
             return newUser;
         }
+    }
+    
+    public Horse createHorse(String name, ArrayList<Horse> horses) {
+        boolean horseFound = false;
+        
+        for (int i = 0; i < horses.size(); i++) {
+            if (horses.get(i).getName().equals(name)) {
+                horseFound = true;
+                break;
+            }
+        }
+
+        if (horseFound) {
+            System.out.println("Horse already exists.");
+            return null;
+        } else {
+            Horse newHorse = new Horse(name);
+            System.out.println("New horse " + name + " created.");
+            return newHorse;
+        }
+    }
+    
+    public Horse addHorseInformation(Horse horse) {
+        Horse newHorse = new Horse(horse.getName());
+        System.out.println("Add optional information:");
+        System.out.println("Gender: ");
+        Gender gender = Gender.valueOf(reader.nextLine());
+        System.out.println("Year of birth: ");
+        int year = Integer.parseInt(reader.nextLine());
+        
+        newHorse.setGender(gender);
+        newHorse.setYearOfBirth(year);
+        
+        return newHorse;
+    }
+    
+    public void getHorseInformation(String horse, ArrayList<Horse> horses) {
+        int index = -1;
+        
+        for (int i = 0; i < horses.size(); i++) {
+            if (horses.get(i).getName().equals(horse)) {
+                index = i;
+            }
+        }
+        
+        if (index == -1) {
+            System.out.println("Horse " + horse + " was not found.");
+        } else {
+            horses.get(index).printInformation();
+        }
+        
     }
 }

@@ -19,8 +19,7 @@ public class LogicTest {
 
     @Before
     public void setUp() {
-        Scanner reader = new Scanner(System.in);
-        logic = new Logic(reader);
+        logic = new Logic();
     }
     
     @Test
