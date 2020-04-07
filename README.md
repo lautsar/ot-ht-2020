@@ -5,6 +5,8 @@
 
 [Tuntikirjanpito](https://github.com/lautsar/ot-ht-2020/blob/master/dokumentointi/tuntikirjanpito.md)
 
+[Arkkitehtuurikuvaus](https://github.com/lautsar/ot-ht-2020/blob/master/dokumentointi/arkkitehtuuri.md)
+
 ## Komentorivitoiminnot
 Koodin voi suorittaa komennolla
 
