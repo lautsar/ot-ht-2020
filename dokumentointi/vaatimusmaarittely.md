@@ -10,15 +10,16 @@ Alkuvaiheessa sovelluksella on vain yksi käyttäjärooli (normaali käyttäjä)
 * Perusversiossa on tekstikäyttöliittymä
 
 ### Ennen kirjautumista
-* käyttäjä voi luoda käyttäjätunnuksen
-* käyttäjä voi kirjautua sisään
+* käyttäjä voi luoda käyttäjätunnuksen (tehty, tosin tilapäisellä tiedon tallennuspaikalla)
+* käyttäjä voi kirjautua sisään (tehty)
 
 ### Kirjautumisen jälkeen
-* käyttäjä voi lisätä uusia hevosia
+* käyttäjä voi lisätä uusia hevosia (tehty, tosin tilapäisellä tiedon tallennuspaikalla)
+* käyttäjä voi tarkastella hevosen tietoja (tehty osittain)
 * käyttäjä voi lisätä uusia harjoituskertoja
 * käyttäjä voi katsoa omia ja muiden käyttäjien harjoituskertoja
 * käyttäjä voi pyytää yksinkertaisia tilastoja 
-* käyttäjä voi kirjautua ulos järjestelmästä
+* käyttäjä voi lopettaa ohjelman käyttämisen (tehty)
 
 ## Jatkokehitysideoita
 Perusversioita voidaan täydentää ajan salliessa esimerkiksi seuraavilla ominaisuuksilla
