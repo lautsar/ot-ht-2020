@@ -8,4 +8,4 @@ Päivä | Aika | Mitä
 31.3.|2|Rakenteen järjestelyä hiukan järkevämpään suuntaan
 6.4.|2|Uusi luokka, checkstyle käyttöön
 7.4.|2|Rakenteen järkevöinti, lisää testejä
-Yhteensä: 11 h
+**Yhteensä**| **11**
