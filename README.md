@@ -21,4 +21,5 @@ Testikattavuusraportti luodaan komennolla
 mvn test jacoco:report
 
 Checkstyle-raportin saa luotua komennolla
+
 mvn jxr:jxr checkstyle:checkstyle
