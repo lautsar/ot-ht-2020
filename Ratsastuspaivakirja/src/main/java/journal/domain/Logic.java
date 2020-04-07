@@ -14,19 +14,27 @@ import journal.domain.Horse.Gender;
  * @author lautanas
  */
 public class Logic {
+
     private Scanner reader;
     private boolean signedIn;
     private boolean quit;
     private Database db;
     private ArrayList<User> users;
     private User currentUser;
-    
-    public Logic() {
+
+    public Logic(Scanner reader) {
         this.reader = reader;
 
     }
     
-    public boolean signIn(String user, ArrayList<User> users) {
+    public void setReader(Scanner scanner) {
+        this.reader = scanner;
+    }
+
+    public boolean signIn(ArrayList<User> users) {
+        
+        System.out.println("Enter user name: ");
+        String user = reader.nextLine();
 
         int userFound = -1;
 
@@ -42,13 +50,16 @@ public class Logic {
             this.currentUser = users.get(userFound);
             return true;
         } else {
-            System.out.println("User was not found. Try again (1), create new user (2) or quit (3)");
+            System.out.println("User was not found.");
             return false;
         }
     }
-    
-    public User createUser(String name, ArrayList<User> users) {
 
+    public User createUser(ArrayList<User> users) {
+
+        System.out.println("Enter user name: ");
+        String name = reader.nextLine();
+        
         boolean userFound = false;
 
         for (int i = 0; i < users.size(); i++) {
@@ -67,10 +78,13 @@ public class Logic {
             return newUser;
         }
     }
-    
-    public Horse createHorse(String name, ArrayList<Horse> horses) {
+
+    public Horse createHorse(ArrayList<Horse> horses) {
         boolean horseFound = false;
-        
+
+        System.out.println("Enter horse's name: ");
+        String name = reader.nextLine();
+
         for (int i = 0; i < horses.size(); i++) {
             if (horses.get(i).getName().equals(name)) {
                 horseFound = true;
@@ -87,7 +101,7 @@ public class Logic {
             return newHorse;
         }
     }
-    
+
     public Horse addHorseInformation(Horse horse) {
         Horse newHorse = new Horse(horse.getName());
         System.out.println("Add optional information:");
@@ -95,27 +109,30 @@ public class Logic {
         Gender gender = Gender.valueOf(reader.nextLine());
         System.out.println("Year of birth: ");
         int year = Integer.parseInt(reader.nextLine());
-        
+
         newHorse.setGender(gender);
         newHorse.setYearOfBirth(year);
-        
+
         return newHorse;
     }
-    
-    public void getHorseInformation(String horse, ArrayList<Horse> horses) {
+
+    public void getHorseInformation(ArrayList<Horse> horses) {
         int index = -1;
+
+        System.out.println("Enter horse's name: ");
+        String horse = reader.nextLine();
         
         for (int i = 0; i < horses.size(); i++) {
             if (horses.get(i).getName().equals(horse)) {
                 index = i;
             }
         }
-        
+
         if (index == -1) {
             System.out.println("Horse " + horse + " was not found.");
         } else {
             horses.get(index).printInformation();
         }
-        
+
     }
 }

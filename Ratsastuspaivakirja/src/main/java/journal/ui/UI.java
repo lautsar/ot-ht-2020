@@ -4,7 +4,11 @@ import journal.domain.Database;
 import journal.domain.Logic;
 import journal.domain.User;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
 import journal.domain.Horse;
 
 public class UI {
@@ -17,6 +21,8 @@ public class UI {
     private ArrayList<Horse> horses;
     private User currentUser;
     private Logic logic;
+    private Map<String, String> commands;
+    private Map<String, String> userCommands;
 
     public UI(Scanner reader, Logic logic) {
         this.reader = reader;
@@ -26,126 +32,99 @@ public class UI {
         this.users = new ArrayList<>();
         this.horses = new ArrayList<>();
         this.logic = logic;
+
+        userCommands = new TreeMap<>();
+        userCommands.put("1", "1) Sign in");
+        userCommands.put("2", "2) Create a new user");
+        // Tähän väliin lisää toimintoja
+        userCommands.put("x", "x) Quit");
+
+        commands = new TreeMap<>();
+        commands.put("0", "0) List commands");
+        commands.put("1", "1) Create a new horse");
+        commands.put("2", "2) Get horse's information");
+        commands.put("x", "x) Quit");
     }
 
     public void start() {
+        while (!signedIn) {
+            userMenu();
+        }
+
         while (true) {
             if (quit) {
                 return;
-            } else if (!signedIn) {
-                manageUsers();
             } else {
                 mainMenu();
             }
         }
     }
+    
+    public void userMenu() {
+        for (Entry<String,String> entry : userCommands.entrySet()) {
+            System.out.println(entry.getValue());
+        }
+        userMenuCommands();
+    }
 
     public void mainMenu() {
-        System.out.println("Choose your action:");
-        System.out.println("1) Manage horses");
-        System.out.println("2) Manage lessons");
-        System.out.println("3) See statistics");
-        System.out.println("4) Quit");
+        for (Entry<String,String> entry : commands.entrySet()) {
+            System.out.println(entry.getValue());
+        }
 
         mainMenuCommands();
     }
 
     public void mainMenuCommands() {
-        System.out.println("Enter command (1-4): ");
+        System.out.println("Enter command: ");
         String command = reader.nextLine();
-
-        if (command.equals("1")) {
-            manageHorses();
-        } else if (command.equals("2")) {
-            manageLessons();
-        } else if (command.equals("3")) {
-            seeStatistics();
-        } else if (command.equals("4")) {
-            quit = true;
-            return;
-        } else {
+        
+        if(!commands.keySet().contains(command)) {
             System.out.println("Invalid command.");
+            mainMenuCommands();
         }
-    }
 
-    public void userChoices() {
-        System.out.println("Enter command (1-3): ");
-        String choice = reader.nextLine();
-        if (choice.equals("1")) {
-            System.out.println("Enter user name: ");
-            String user = reader.nextLine();
-
-            signedIn = logic.signIn(user, users);
-        } else if (choice.equals("2")) {
-            System.out.println("Give user name: ");
-            String name = reader.nextLine();
-
-            User user = logic.createUser(name, users);
-
-            if (user != null) {
-                users.add(user);
-            }
-        } else if (choice.equals("3")) {
-            this.quit = true;
-            return;
-        } else {
-            System.out.println("Invalid command. Enter command 1-3: ");
-            userChoices();
-        }
-    }
-
-    public void manageUsers() {
-        System.out.println("1) Sign in");
-        System.out.println("2) Create a new user");
-        System.out.println("3) Quit");
-        System.out.println("");
-
-        userChoices();
-    }
-
-    public void manageHorses() {
-        System.out.println("1) Create a new horse");
-        System.out.println("2) Get horse's information");
-        System.out.println("3) Return to main menu");
-        System.out.println("");
-
-        horseChoices();
-    }
-
-    public void horseChoices() {
-        System.out.println("Enter command (1-3): ");
-        String choice = reader.nextLine();
-        if (choice.equals("1")) {
-            System.out.println("Enter horse's name: ");
-            String horse = reader.nextLine();
-
-            Horse newHorse = logic.createHorse(horse, horses);
-            
+        // Lisää toimintoja lisätään myöhemmin
+        if (command.equals("0")) {
+            mainMenu();
+        } else if (command.equals("1")) {
+            Horse newHorse = logic.createHorse(horses);
+            // Tilapäinen ratkaisu
             if (newHorse != null) {
                 horses.add(newHorse);
             }
-            
-            horseChoices();
-        } else if (choice.equals("2")) {
-            System.out.println("Enter horse's  name: ");
-            String horse = reader.nextLine();
-
-            logic.getHorseInformation(horse, horses);
-            horseChoices();
-        } else if (choice.equals("3")) {
-            mainMenuCommands();
-        } else {
-            System.out.println("Invalid command. Enter command 1-3: ");
-            horseChoices();
+        } else if (command.equals("2")) {
+           logic.getHorseInformation(horses);
+        } else if (command.equals("x")) {
+            quit = true;
+            return;
         }
     }
 
-    public void manageLessons() {
-        System.out.println("Manage lessons. Work in progress.");
+    public void userMenuCommands() {
+        System.out.println("Enter command: ");
+        String command = reader.nextLine();
+        
+        if(!userCommands.keySet().contains(command)) {
+            System.out.println("Invalid command.");
+            userMenuCommands();
+        }
+        
+        if (command.equals("1")) {
+            signedIn = logic.signIn(users);
+        } else if (command.equals("2")) {
+            User user = logic.createUser(users);
+            
+            // Tilapäinen ratkaisu
+            if (user != null) {
+                users.add(user);
+            }
+        } else if (command.equals("x")) {
+            this.quit = true;
+            return;
+        }
     }
 
-    public void seeStatistics() {
-        System.out.println("See statistics. Work in progress.");
-    }
+    
 
 }

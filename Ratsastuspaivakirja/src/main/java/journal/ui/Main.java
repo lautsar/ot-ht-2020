@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        Logic logic = new Logic();
+        Logic logic = new Logic(reader);
         
         UI ui = new UI(reader, logic);
         ui.start();
